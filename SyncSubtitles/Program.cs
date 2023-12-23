@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using dotenv.net;
+using Microsoft.Extensions.DependencyInjection;
 using SyncSubtitles;
 using SyncSubtitles.Interfaces;
 using SyncSubtitles.Models;
@@ -28,12 +29,14 @@ class Program
 
     static void Main(string[] args)
     {
+        DotEnv.Load();
 
         var serviceCollection = new ServiceCollection();
         ConfigureServices(serviceCollection);
         var serviceProvider = serviceCollection.BuildServiceProvider();
 
-        botClient = new TelegramBotClient("####"); // your bot token
+        string botToken = Environment.GetEnvironmentVariable("TELEGRAM_BOT_TOKEN") ?? throw new InvalidOperationException("Bot token not found in environment variables.");
+
 
         using var cts = new CancellationTokenSource();
         var receiverOptions = new ReceiverOptions
