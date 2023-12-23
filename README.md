@@ -62,7 +62,7 @@ cd telegram-subtitle-bot</code></pre>
 
 <h2>🤝 Contributing</h2>
 
-<p>Contributions, issues, and feature requests are welcome! Feel free to check <a href="https://github.com/yourusername/telegram-subtitle-bot/issues">issues page</a>.</p>
+<p>Contributions, issues, and feature requests are welcome! Feel free to check <a href="https://github.com/Mshiravi10/SyncSubtitles/issues">issues page</a>.</p>
 
 
 <h2>💐 Acknowledgements</h2>
